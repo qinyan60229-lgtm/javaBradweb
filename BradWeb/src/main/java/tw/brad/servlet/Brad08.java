@@ -13,7 +13,7 @@ import jakarta.servlet.http.Part;
 
 @WebServlet("/Brad08")
 @MultipartConfig(
-		location = "C:\\Users\\User\\git\\Bradweb\\BradWeb\\src\\main\\webapp\\upload"
+		location = "C:\\Users\\User\\git\\javaBradweb\\BradWeb\\src\\main\\webapp\\upload"
 		)
 public class Brad08 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -34,7 +34,9 @@ public class Brad08 extends HttpServlet {
 			
 			System.out.printf("%s:%s:%s:%d:%s\n", urip, type, name, size, sname);			
 			
-			String sfname = String.format("%s_%s", urip, part.getSubmittedFileName());
+			String sfname = String.format("%s_%s",
+			        urip.replace(":", "_"),
+			        part.getSubmittedFileName());
 			if (type != null && part.getSize() > 0) {
 				part.write(sfname);
 			}			
