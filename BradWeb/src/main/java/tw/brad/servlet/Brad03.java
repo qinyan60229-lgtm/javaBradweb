@@ -13,7 +13,7 @@ public class Brad03 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");  //讀取 Request 裡的文字資料時，使用 UTF-8 解碼
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();

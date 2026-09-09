@@ -16,7 +16,7 @@ public class Brad02 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		System.out.println("doGet()");
-		
+		//一個一個把資料拿出來				//把這次 Request 裡所有 Header 的名字給我
 		Enumeration<String> names = request.getHeaderNames();
 		while (names.hasMoreElements()) {
 			String name = names.nextElement();
