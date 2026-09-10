@@ -15,11 +15,11 @@ public class Brad04 extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String x = request.getParameter("x");
+		String x = request.getParameter("x"); //從request取得參數
 		String y = request.getParameter("y");
 		
 		if (x != null && y!= null) {
-			int r = Integer.parseInt(x) + Integer.parseInt(y);
+			int r = Integer.parseInt(x) + Integer.parseInt(y); //轉int
 			PrintWriter out = response.getWriter();
 			out.printf("%s + %s = %d", x, y, r);
 		}

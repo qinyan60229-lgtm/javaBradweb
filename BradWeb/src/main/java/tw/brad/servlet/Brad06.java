@@ -17,7 +17,7 @@ public class Brad06 extends HttpServlet {
 		System.out.println("doGet");
 		
 		String[] habits = request.getParameterValues("habit");
-		for (String habit : habits) System.out.println(habit);
+		for (String habit : habits) System.out.println(habit);  //陣列裡的每一個值拿出來
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 

@@ -35,7 +35,9 @@ public class Brad10 extends HttpServlet {
 		
 		File file = new File(getServletContext().getRealPath("/upload"),"brad.jpg");
 		System.out.println(file.getAbsolutePath());
-		File file2 = new File("C:\\Users\\User\\git\\repository\\BradWeb\\src\\main\\webapp\\upload","brad.jpg");
+		File file2 = new File("C:\\Users\\User\\git\\javaBradweb\\BradWeb\\src\\main\\webapp\\upload","brad.jpg");
+		// C:\Users\User\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\BradWeb\
+		
 		
 		response.setContentType("image/jpeg");
 		//ImageIO.write(img, "JPEG", response.getOutputStream());

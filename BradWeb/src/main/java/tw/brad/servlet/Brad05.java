@@ -21,7 +21,7 @@ public class Brad05 extends HttpServlet {
 			int r = Integer.parseInt(x) + Integer.parseInt(y);
 			sr += r;
 		}else {
-			x = y = "";
+			x = y = ""; //防止開頭=null
 		}
 		
 		//-----------------------------

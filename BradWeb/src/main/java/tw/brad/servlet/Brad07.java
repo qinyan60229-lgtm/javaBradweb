@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 
 @WebServlet("/Brad07")
 @MultipartConfig(
-		location = "C:\\Users\\User\\git\\Bradweb\\BradWeb\\src\\main\\webapp\\META-INF\\upload"
+		location = "C:\\Users\\User\\git\\javaBradweb\\BradWeb\\src\\main\\webapp\\upload"
 		)
 public class Brad07 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -22,7 +22,7 @@ public class Brad07 extends HttpServlet {
 		
 	
 		
-		Part part = request.getPart("upload");
+		Part part = request.getPart("upload");  //從 request 裡面，取得 name="upload" 的那一個上傳部分，存進 part。
 		String type = part.getContentType();
 		String name = part.getName();
 		long size = part.getSize();
