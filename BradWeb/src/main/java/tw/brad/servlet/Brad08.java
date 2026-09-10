@@ -20,17 +20,17 @@ public class Brad08 extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String urip = request.getRemoteAddr();
+		String urip = request.getRemoteAddr();  //取得這次送出 request 的使用者 IP 位址。
 		
-		Collection<Part> parts = request.getParts();
+		Collection<Part> parts = request.getParts();  //把表單所有資料拿出來。
 		for (Part part :parts) {    //每一個 Part 都處理一次。
 //			String name = part.getName();
 //			System.out.println(name);
 			
-			String type = part.getContentType();
-			String name = part.getName();
+			String type = part.getContentType();  //取得檔案的 MIME Type
+			String name = part.getName();  //表單欄位名字
 			long size = part.getSize();
-			String sname = part.getSubmittedFileName();
+			String sname = part.getSubmittedFileName();  //使用者上傳的檔案名字
 			
 			System.out.printf("%s:%s:%s:%d:%s\n", urip, type, name, size, sname);			
 			

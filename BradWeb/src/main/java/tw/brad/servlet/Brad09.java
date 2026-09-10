@@ -20,6 +20,8 @@ public class Brad09 extends HttpServlet {
 		
 		String uuid = UUID.randomUUID().toString();  //隨機的識別檔名
 		System.out.println(uuid);
+		
+		System.out.println();
 	}
 
 }
