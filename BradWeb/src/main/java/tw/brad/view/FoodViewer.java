@@ -17,7 +17,7 @@ import tw.brad.api.Food;
 
 @WebServlet("/FoodViewer")
 public class FoodViewer extends HttpServlet {
-	private static final String TEMPLETE_PATH = "/WEB-INF/views/view1.html";
+	private static final String TEMPLETE_PATH = "/WEB-INF/views/views1.html";
 	private String templete;
 
 	@Override
