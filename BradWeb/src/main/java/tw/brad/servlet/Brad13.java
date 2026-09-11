@@ -16,7 +16,7 @@ public class Brad13 extends HttpServlet {
 	
 		String x = request.getParameter("x");
 		String y = request.getParameter("y");
-		Integer z = (Integer)(request.getAttribute("z"));
+		Integer z = (Integer)(request.getAttribute("z")); //原本是Object
 		
 		Bike b1 = (Bike)request.getAttribute("bike");
 	

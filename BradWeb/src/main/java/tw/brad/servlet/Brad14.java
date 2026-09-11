@@ -29,7 +29,7 @@ public class Brad14 extends HttpServlet {
 		//---------------
 		response.setContentType("text/html; charset=UTF-8");
 	
-		dispatcher1.forward(request, response);
+		dispatcher1.forward(request, response);  //把目前這個 request 和 response 整個交給 Brad13 繼續處理
 		
 		
 	}

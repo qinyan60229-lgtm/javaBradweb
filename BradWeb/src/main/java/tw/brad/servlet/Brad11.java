@@ -15,7 +15,7 @@ public class Brad11 extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		RequestDispatcher dispatcher1 = request.getRequestDispatcher("brad111.html");
+		RequestDispatcher dispatcher1 = request.getRequestDispatcher("brad111.html");  //把 Request 交給 Web 專案裡另一個資源處理的工具
 		RequestDispatcher dispatcher2 = request.getRequestDispatcher("brad112.html");
 		
 		//---------------

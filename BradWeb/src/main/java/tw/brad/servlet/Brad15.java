@@ -34,7 +34,7 @@ public class Brad15 extends HttpServlet {
 			while (rs.next()) {
 				System.out.printf("%d:%s\n", rs.getLong("id"), rs.getString("cname"));
 			}
-		}catch(Exception e) {
+		}catch(Exception e) { 
 			e.printStackTrace();
 		}
 		

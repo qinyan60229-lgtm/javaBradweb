@@ -19,7 +19,7 @@ public class Brad12 extends HttpServlet {
 		
 		RequestDispatcher dispatcher1 = request.getRequestDispatcher("Brad13");
 		
-		request.setAttribute("z", 7);	// int => auto-boxing Integer
+		request.setAttribute("z", 7);	// int => auto-boxing Integer   setAttribute在某個物件裡面暫時放一筆資料
 
 		Bike b1 = new Bike();
 		b1.upSpeed().upSpeed().upSpeed().upSpeed();

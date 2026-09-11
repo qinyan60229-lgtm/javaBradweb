@@ -24,23 +24,23 @@ public class Brad10 extends HttpServlet {
 			pr = Double.parseDouble(request.getParameter("pr")); 	// 50 => 50%
 		}catch(Exception e) {}
 		
-		BufferedImage img = new BufferedImage(800, 20, BufferedImage.TYPE_INT_RGB);
-		Graphics2D g2d = img.createGraphics();
+		BufferedImage img = new BufferedImage(800, 20, BufferedImage.TYPE_INT_RGB);  //畫布
+		Graphics2D g2d = img.createGraphics();  //畫筆
 		
 		g2d.setColor(Color.YELLOW);
-		g2d.fillRect(0, 0, 800, 20);
+		g2d.fillRect(0, 0, 800, 20); //塗滿黃
 		
 		g2d.setColor(Color.RED);
 		g2d.fillRect(0, 0, (int)(800*pr/100), 20);
 		
-		File file = new File(getServletContext().getRealPath("/upload"),"brad.jpg");
-		System.out.println(file.getAbsolutePath());
-		File file2 = new File("C:\\Users\\User\\git\\javaBradweb\\BradWeb\\src\\main\\webapp\\upload","brad.jpg");
+		File file = new File(getServletContext().getRealPath("/upload"),"brad.jpg");  //"C:\\某個Tomcat位置\\BradWeb\\upload"
+		System.out.println(file.getAbsolutePath());  //完整實體路徑
+		File file2 = new File("C:\\Users\\User\\git\\Bradweb\\BradWeb\\src\\main\\webapp\\upload\\brad.jpg");
 		// C:\Users\User\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\BradWeb\
 		
 		
-		response.setContentType("image/jpeg");
-		//ImageIO.write(img, "JPEG", response.getOutputStream());
+		response.setContentType("image/jpeg"); //內容
+		ImageIO.write(img, "JPEG", response.getOutputStream()); //顯示
 		response.flushBuffer();
 		
 		ImageIO.write(img, "JPEG", file2);
