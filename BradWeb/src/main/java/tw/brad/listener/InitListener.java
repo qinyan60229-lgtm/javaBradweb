@@ -9,11 +9,11 @@ import jakarta.servlet.annotation.WebListener;
 
 @WebListener
 public class InitListener implements ServletContextListener{
-	private static HikariDataSource dataSource;
+	private static HikariDataSource dataSource;  //資料庫連線池
 	
 	static {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");  //載入 MySQL JDBC Driver
 			System.out.println("Load Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -23,7 +23,7 @@ public class InitListener implements ServletContextListener{
 	
 	
 	public static HikariDataSource getDataSource() {
-		return dataSource;
+		return dataSource;  //呼叫這個方法
 	}
 	
 	@Override
@@ -32,7 +32,7 @@ public class InitListener implements ServletContextListener{
 		ServletContextListener.super.contextInitialized(sce);
 		
 		HikariConfig config = new HikariConfig();
-		config.setJdbcUrl("jdbc:mysql://localhost:3306/brad?useSSL=false");
+		config.setJdbcUrl("jdbc:mysql://localhost:8889/brad?useSSL=false");
 		config.setUsername("root");
 		config.setPassword("root");
 		
@@ -47,7 +47,7 @@ public class InitListener implements ServletContextListener{
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
 		ServletContextListener.super.contextDestroyed(sce);
-		if (dataSource != null && !dataSource.isClosed()) {
+		if (dataSource != null && !dataSource.isClosed()) {  //如果連線池存在，而且還沒關閉，就把它關掉
 			dataSource.close();
 		}
 	}
